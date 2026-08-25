@@ -1,0 +1,2 @@
+.terminal-output{height:280px;padding:18px;overflow:auto}.terminal-line{display:flex;align-items:center;gap:8px;min-height:25px;white-space:nowrap}.terminal-line>span{color:var(--lime);font-size:11px}.terminal-line input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#fff;font:13px var(--mono);padding:0}.terminal-line input:disabled{color:#fff;opacity:1}.terminal-response{margin:0 0 8px;line-height:1.55;padding-left:0}.terminal-response b{color:var(--lime)}
+@media(max-width:760px){.terminal-output{height:260px}}

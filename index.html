@@ -1,870 +1,106 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Henry Curtis | Full Stack &amp; Mobile Developer (Flutter, Web, iOS, Android)</title>
-    <meta name="description" content="Portfolio of Henry Curtis - Full Stack & Mobile Developer building Flutter iOS & Android apps, modern web applications, and performant APIs.">
-    <meta name="keywords" content="Software Engineer, Full Stack Developer, Mobile Developer, Flutter, Dart, iOS, Android, React, Python, FastAPI, Django, PostgreSQL">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome for crisp vector icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Background Canvas Particles -->
-    <canvas id="bg-canvas"></canvas>
-
-    <!-- Glowing Background Ambient Spheres -->
-    <div class="ambient-light light-1"></div>
-    <div class="ambient-light light-2"></div>
-    <div class="ambient-light light-3"></div>
-
-    <!-- Navigation Bar -->
-    <header class="navbar-header" id="navbar">
-        <div class="container nav-container">
-            <a href="#hero" class="brand-logo">
-                <span class="logo-bracket">&lt;</span><span class="logo-name">HenryCurtis</span><span class="logo-slash">/</span><span class="logo-bracket">&gt;</span>
-            </a>
-
-            <nav class="nav-menu" id="nav-menu">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="#hero" class="nav-link active">Home</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                    <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-                    <li class="nav-item"><a href="#terminal" class="nav-link">Terminal</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-
-            <div class="nav-actions">
-                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light/dark theme">
-                    <i class="fa-solid fa-moon icon-dark"></i>
-                    <i class="fa-solid fa-sun icon-light"></i>
-                </button>
-                
-                <a href="#contact" class="btn btn-primary btn-sm btn-glow">Hire Me</a>
-
-                <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation Menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-            </div>
-        </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Henry Curtis — full-stack-oriented developer building practical web, mobile, API, and fintech systems." />
+    <title>Henry Curtis — Product-minded developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="extra.css" />
+    <link rel="stylesheet" href="terminal.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Henry Curtis home">HC<span>·</span>LABS</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#work">Work</a><a href="#systems">Systems</a><a href="#about">About</a>
+      </nav>
+      <a class="nav-contact" href="#contact">Let’s talk <span>↗</span></a>
+      <button class="menu-button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-section" id="hero">
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <div class="status-badge">
-                        <span class="status-dot"></span>
-                        <span>Available for Full-time &amp; Contract Work</span>
-                    </div>
-
-                    <h1 class="hero-title">
-                        Hi, I'm <span class="text-gradient">Henry Curtis</span>
-                    </h1>
-                    
-                    <h2 class="hero-subtitle">
-                        I build <span class="typing-text" id="typing-element"></span><span class="cursor">&nbsp;</span>
-                    </h2>
-
-                    <p class="hero-description">
-                        Full Stack &amp; Mobile Developer specializing in cross-platform iOS &amp; Android apps (Flutter), responsive web applications, and performant backend APIs. Crafting clean, maintainable code for web and mobile platforms.
-                    </p>
-
-                    <div class="hero-cta-group">
-                        <a href="#projects" class="btn btn-primary btn-glow">
-                            <span>Explore Projects</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <a href="#contact" class="btn btn-secondary">
-                            <i class="fa-solid fa-paper-plane"></i>
-                            <span>Get In Touch</span>
-                        </a>
-                        <a href="#" class="btn btn-outline" id="download-cv-btn">
-                            <i class="fa-solid fa-download"></i>
-                            <span>Resume</span>
-                        </a>
-                    </div>
-
-                    <div class="hero-socials">
-                        <span class="socials-label">Connect with me:</span>
-                        <a href="https://github.com/rophylbycurtis" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/henry-curtis-a745792b4" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://x.com/realcurtis_" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/itscurtishenry" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-                </div>
-
-                <div class="hero-visual">
-                    <div class="avatar-card-wrapper">
-                        <div class="avatar-card glass-card">
-                            <div class="avatar-img-box">
-                                <img src="assets/images/avatar.jpg" alt="Henry Curtis - Software Engineer" class="avatar-img">
-                                <div class="avatar-ring"></div>
-                            </div>
-                            <div class="avatar-info">
-                                <h3 class="avatar-name">Henry Curtis</h3>
-                                <p class="avatar-role">Full Stack &amp; Mobile Developer</p>
-                            </div>
-                        </div>
-
-                        <!-- Floating Tech Badges -->
-                        <div class="floating-badge badge-1 glass-card">
-                            <i class="fa-brands fa-react color-react"></i>
-                            <span>React / Next.js</span>
-                        </div>
-                        <div class="floating-badge badge-2 glass-card">
-                            <i class="fa-solid fa-mobile-screen-button color-cyan" style="color: #06b6d4;"></i>
-                            <span>Flutter (iOS &amp; Android)</span>
-                        </div>
-                        <div class="floating-badge badge-3 glass-card">
-                            <i class="fa-brands fa-python color-python"></i>
-                            <span>Python / FastAPI</span>
-                        </div>
-                        <div class="floating-badge badge-4 glass-card">
-                            <i class="fa-brands fa-python color-python" style="color: #10b981;"></i>
-                            <span>Python / Django</span>
-                        </div>
-                    </div>
-                </div>
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-meta reveal"><span class="live-dot"></span> Available for thoughtful work</div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow reveal">FULL-STACK-ORIENTED DEVELOPER</p>
+            <h1 class="reveal">Software for<br /><em>the real world.</em></h1>
+            <p class="hero-intro reveal">I’m Henry Curtis. I turn ambitious product ideas into dependable web, mobile, and backend systems—with particular curiosity for fintech, mobility, and useful APIs.</p>
+            <div class="hero-actions reveal">
+              <a href="#work" class="button button-dark">See selected work <span>↓</span></a>
+              <a href="#contact" class="text-link">Start a conversation <span>↗</span></a>
             </div>
+          </div>
+          <aside class="hero-art reveal" aria-label="Abstract application architecture diagram">
+            <div class="art-topline"><span>PRODUCT SYSTEM / 01</span><span>2026</span></div>
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="core"><span>HC</span><small>BUILD</small></div>
+            <div class="node node-api">API<small>FASTAPI</small></div>
+            <div class="node node-mobile">MOBILE<small>FLUTTER</small></div>
+            <div class="node node-data">DATA<small>POSTGRES</small></div>
+            <div class="node node-web">WEB<small>REACT</small></div>
+            <svg class="routes" viewBox="0 0 500 500" aria-hidden="true"><path d="M250 250 L95 155 M250 250 L395 115 M250 250 L390 372 M250 250 L110 370" /></svg>
+            <div class="art-footer"><span>DESIGNING FOR USEFULNESS</span><span>✦</span></div>
+          </aside>
+        </div>
+        <div class="scroll-note"><span class="scroll-line"></span>SCROLL TO EXPLORE</div>
+      </section>
 
-            <!-- Stats Counter Bar -->
-            <div class="stats-bar-wrapper">
-                <div class="container">
-                    <div class="stats-grid glass-card">
-                        <div class="stat-item">
-                            <h3 class="stat-number" data-target="4">0</h3>
-                            <p class="stat-label">Years Experience</p>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-item">
-                            <h3 class="stat-number" data-target="15">0</h3>
-                            <p class="stat-label">Projects Completed</p>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-item">
-                            <h3 class="stat-number" data-target="10">0</h3>
-                            <p class="stat-label">GitHub Contributions</p>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-item">
-                            <h3 class="stat-number" data-target="99">0</h3>
-                            <p class="stat-label">% Code Quality Index</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <section class="marquee" aria-label="Key technologies"><div><span>FLUTTER + DART</span><b>✦</b><span>FASTAPI + PYTHON</span><b>✦</b><span>REACT + NEXT.JS</span><b>✦</b><span>POSTGRESQL + REDIS</span><b>✦</b><span>PAYMENT SYSTEMS</span><b>✦</b><span>FLUTTER + DART</span><b>✦</b></div></section>
 
-        <!-- About Me Section -->
-        <section class="section about-section" id="about">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="section-subtitle">Biography &amp; Workflow</span>
-                    <h2 class="section-title">About <span class="text-gradient">Myself</span></h2>
-                    <div class="section-line"></div>
-                </div>
+      <section class="work section-shell" id="work">
+        <div class="section-heading reveal"><p class="eyebrow">SELECTED DIRECTIONS / 02</p><h2>Made to solve<br /><em>something specific.</em></h2><p>I’m interested in the work behind a useful product: the data model, the integration, the uncomfortable edge case, and the interface that makes it all feel simple.</p></div>
+        <div class="project-list">
+          <article class="project project-featured reveal">
+            <div class="project-visual ai-visual"><div class="ai-card card-a"><small>CONTEXT</small><strong>Thread 014</strong></div><div class="ai-card card-b"><small>STREAM</small><strong>Live</strong></div><div class="ai-path"></div><span class="visual-index">01 / AI PRODUCT</span></div>
+            <div class="project-info"><span class="project-kind">WEB + MOBILE / AI PRODUCT</span><h3>Rophyl AI</h3><p>A Next.js and React web port of a Flutter AI chat app, designed around a full conversation experience and responsive product UI.</p><div class="tag-row"><span>Next.js</span><span>React</span><span>Gemini API</span><span>Upstash Redis</span></div><button class="case-button" data-project="ai">Explore the system <span>↗</span></button></div>
+          </article>
+          <article class="project reveal">
+            <div class="project-visual rophyl-visual"><div class="weather-card"><span>WEATHER</span><strong>24°</strong><i>Partly cloudy</i></div><div class="news-lines"><i></i><i></i><i></i></div><span class="visual-index">02 / CONTENT HUB</span></div>
+            <div class="project-info"><span class="project-kind">MOBILE / API-DRIVEN CONTENT</span><h3>Rophyl Updates</h3><p>A modern content hub concept for useful daily information—starting with weather and news, with room for sports, entertainment, and notifications.</p><div class="tag-row"><span>Flutter</span><span>FastAPI</span><span>REST APIs</span></div><button class="case-button" data-project="rophyl">Explore the system <span>↗</span></button></div>
+          </article>
+          <article class="project reveal">
+            <div class="project-visual transit-visual"><div class="route-line"><b></b><b></b><b></b><b></b></div><div class="ticket"><small>ROUTE 104</small><strong>Seat 12 → Window</strong><span>09:45 · BOARDING</span></div><span class="visual-index">03 / TRANSPORT TECH</span></div>
+            <div class="project-info"><span class="project-kind">MOBILITY / PROTOTYPE</span><h3>Bus booking app</h3><p>A prototype exploring passenger booking, route information, and a better-connected travel experience. It was presented to a company, but did not fit their plan.</p><div class="tag-row"><span>Flutter</span><span>APIs</span><span>Product design</span></div><button class="case-button" data-project="coach">Explore the system <span>↗</span></button></div>
+          </article>
+          <article class="project reveal">
+            <div class="project-visual tube-visual"><div class="tube-window"><div class="tube-bar"><i></i><i></i><i></i></div><strong>Paste a video link</strong><div class="tube-input">youtube.com/watch... <b>→</b></div><small>READY TO PROCESS</small></div><span class="visual-index">04 / SHIPPED WEB TOOL</span></div>
+            <div class="project-info"><span class="project-kind">WEB / MEDIA UTILITY</span><h3>Rophyl Tube Downloader</h3><p>A FastAPI, yt-dlp, React, and Vite web tool deployed across Render and Netlify. The build involved navigating CORS and deployment constraints around video processing.</p><div class="tag-row"><span>FastAPI</span><span>yt-dlp</span><span>React</span><span>Vite</span></div><a class="case-button" href="https://rophyltube.netlify.app" target="_blank" rel="noreferrer">Visit rophyltube.netlify.app <span>↗</span></a></div>
+          </article>
+          <article class="project reveal">
+            <div class="project-visual shop-visual"><div class="shop-product"><span>ROPHYL</span><b>SHOP</b><i>·</i></div><div class="shop-checkout"><small>CHECKOUT</small><strong>Payment flow</strong><span>Inventory · Orders · API</span></div><span class="visual-index">05 / IN PROGRESS</span></div>
+            <div class="project-info"><span class="project-kind">E-COMMERCE / LEARNING PROJECT</span><h3>Rophyl Shop</h3><p>An in-progress e-commerce learning project exploring async FastAPI services, Stripe checkout, inventory, and Supabase Postgres—with M-Pesa planned for a Kenyan production payment path.</p><div class="tag-row"><span>FastAPI</span><span>SQLAlchemy async</span><span>Supabase</span><span>Stripe</span></div><button class="case-button" data-project="shop">Explore the system <span>↗</span></button></div>
+          </article>
+        </div>
+      </section>
 
-                <div class="about-grid">
-                    <div class="about-bio-card glass-card">
-                        <h3 class="bio-heading">Architecting digital solutions with precision &amp; creativity</h3>
-                        <p class="bio-text">
-                            I am a passionate Full Stack &amp; Mobile Developer. Over the past 4+ years, I've designed and delivered cross-platform mobile apps for Android &amp; iOS using Flutter, responsive web applications, and robust backend APIs.
-                        </p>
-                        <p class="bio-text">
-                            My engineering approach combines sleek UX design with scalable backend systems. I believe in clean code, automated testing, continuous integration, and constantly staying at the forefront of emerging technologies.
-                        </p>
+      <section class="systems" id="systems">
+        <div class="section-shell systems-wrap">
+          <div class="systems-intro reveal"><p class="eyebrow">HOW I THINK / 03</p><h2>Every screen has a system <em>behind it.</em></h2><p>My favourite projects connect a clear user experience to a well-considered backend. Tap a layer to see what I focus on.</p></div>
+          <div class="system-explorer reveal">
+            <div class="system-tabs" role="tablist"><button class="system-tab active" data-system="interface">01 Interface</button><button class="system-tab" data-system="logic">02 Logic</button><button class="system-tab" data-system="data">03 Data</button><button class="system-tab" data-system="integrations">04 Integrations</button></div>
+            <div class="system-panel"><p class="panel-label">CURRENT LAYER</p><h3 id="system-title">Interfaces that earn their simplicity.</h3><p id="system-description">Responsive web and mobile experiences that make complex workflows feel clear, calm, and direct.</p><div id="system-skills" class="panel-skills"><span>React</span><span>Next.js</span><span>Flutter</span><span>Responsive UI</span></div><div class="panel-diagram" id="panel-diagram"><span></span><span></span><span></span><span></span></div></div>
+          </div>
+        </div>
+      </section>
 
-                        <div class="about-details-grid">
-                            <div class="detail-item">
-                                <span class="detail-label"><i class="fa-solid fa-user"></i> Name:</span>
-                                <span class="detail-value">Henry Curtis</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label"><i class="fa-solid fa-location-dot"></i> Location:</span>
-                                <span class="detail-value">Unavailable</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label"><i class="fa-solid fa-envelope"></i> Email:</span>
-                                <span class="detail-value">curtishenry030@gmail.com</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label"><i class="fa-solid fa-briefcase"></i> Availability:</span>
-                                <span class="detail-value text-accent">Open for Opportunities</span>
-                            </div>
-                        </div>
+      <section class="about section-shell" id="about">
+        <div class="about-quote reveal"><p class="eyebrow">ABOUT / 04</p><h2>“Can this actually work?” is where I like to start.</h2></div>
+        <div class="about-content reveal"><p>I’m a developer drawn to the moment an idea becomes a working product. That means thinking past the mockup: what powers it, how information moves, how money is recorded, and how it can grow without becoming fragile.</p><p>My work sits across frontend, backend, mobile, databases, and deployment—especially with Python/FastAPI and Flutter/Dart. I value clear structure, practical trade-offs, and software that respects the people using it.</p><div class="capabilities"><div><span>01</span><strong>Web & mobile products</strong><p>Responsive React experiences and Flutter applications built around real workflows.</p></div><div><span>02</span><strong>Backend & APIs</strong><p>Validated, modular services for business logic, authentication, and integrations.</p></div><div><span>03</span><strong>Fintech-minded systems</strong><p>Careful thinking around ledgers, payments, reconciliation, and operational visibility.</p></div></div></div>
+      </section>
 
-                        <div class="about-tags">
-                            <span class="tag">Flutter &amp; Dart</span>
-                            <span class="tag">iOS &amp; Android Apps</span>
-                            <span class="tag">Full-Stack Web</span>
-                            <span class="tag">REST &amp; GraphQL APIs</span>
-                            <span class="tag">App Store &amp; Play Store</span>
-                        </div>
-                    </div>
-
-                    <!-- Code Snippet Editor Box -->
-                    <div class="code-editor-card glass-card">
-                        <div class="editor-header">
-                            <div class="editor-dots">
-                                <span class="dot dot-red"></span>
-                                <span class="dot dot-yellow"></span>
-                                <span class="dot dot-green"></span>
-                            </div>
-                            <div class="editor-tab">
-                                <i class="fa-brands fa-square-js color-js"></i>
-                                <span>developer.config.ts</span>
-                            </div>
-                            <button class="copy-code-btn" id="copy-code-btn" title="Copy code">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                        </div>
-                        <div class="editor-body">
-                            <pre><code id="code-content"><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
-    <span class="code-property">name</span>: <span class="code-string">'Henry Curtis'</span>,
-    <span class="code-property">title</span>: <span class="code-string">'Full Stack & Mobile Developer'</span>,
-    <span class="code-property">passion</span>: [<span class="code-string">'Flutter iOS & Android'</span>, <span class="code-string">'FastAPI & Django'</span>, <span class="code-string">'Clean Code'</span>],
-    <span class="code-property">skills</span>: {
-        <span class="code-property">mobile</span>: [<span class="code-string">'Flutter'</span>, <span class="code-string">'Dart'</span>, <span class="code-string">'iOS & Android'</span>],
-        <span class="code-property">frontend</span>: [<span class="code-string">'React'</span>, <span class="code-string">'Next.js'</span>, <span class="code-string">'TypeScript'</span>, <span class="code-string">'Tailwind'</span>],
-        <span class="code-property">backend</span>: [<span class="code-string">'Python'</span>, <span class="code-string">'FastAPI'</span>, <span class="code-string">'Django'</span>, <span class="code-string">'PostgreSQL'</span>]
-    },
-    <span class="code-property">hardWorker</span>: <span class="code-boolean">true</span>,
-    <span class="code-property">quickLearner</span>: <span class="code-boolean">true</span>,
-    <span class="code-property">solveProblems</span>: () =&gt; {
-        <span class="code-keyword">return</span> <span class="code-string">'Turn complex ideas into elegant, production code.'</span>;
-    }
-};</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tech Stack & Skills Section -->
-        <section class="section skills-section" id="skills">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="section-subtitle">Technical Expertise</span>
-                    <h2 class="section-title">Skills &amp; <span class="text-gradient">Technologies</span></h2>
-                    <div class="section-line"></div>
-                </div>
-
-                <!-- Skill Category Filter -->
-                <div class="category-filter-bar">
-                    <button class="filter-btn active" data-filter="all">All Skills</button>
-                    <button class="filter-btn" data-filter="mobile">Mobile (Flutter)</button>
-                    <button class="filter-btn" data-filter="frontend">Frontend Web</button>
-                    <button class="filter-btn" data-filter="backend">Backend &amp; DB</button>
-                </div>
-
-                <div class="skills-grid" id="skills-container">
-                    <!-- Mobile Flutter -->
-                    <div class="skill-card glass-card" data-category="mobile">
-                        <div class="skill-icon-box color-cyan" style="color: #06b6d4;"><i class="fa-solid fa-mobile-screen-button"></i></div>
-                        <div class="skill-info">
-                            <div class="skill-head">
-                                <h4 class="skill-name">Flutter &amp; Dart</h4>
-                                <span class="skill-percent">95%</span>
-                            </div>
-                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
-                            <p class="skill-desc">Cross-Platform iOS &amp; Android Apps, BLoC / Provider, Native Plugins</p>
-                        </div>
-                    </div>
-
-                    <div class="skill-card glass-card" data-category="mobile">
-                        <div class="skill-icon-box color-git" style="color: #a855f7;"><i class="fa-brands fa-app-store-ios"></i></div>
-                        <div class="skill-info">
-                            <div class="skill-head">
-                                <h4 class="skill-name">iOS &amp; Android App Publishing</h4>
-                                <span class="skill-percent">90%</span>
-                            </div>
-                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
-                            <p class="skill-desc">App Store Connect, Play Console, TestFlight, Fastlane Automation</p>
-                        </div>
-                    </div>
-
-                    <!-- Frontend -->
-                    <div class="skill-card glass-card" data-category="frontend">
-                        <div class="skill-icon-box color-react"><i class="fa-brands fa-react"></i></div>
-                        <div class="skill-info">
-                            <div class="skill-head">
-                                <h4 class="skill-name">React / Next.js</h4>
-                                <span class="skill-percent">95%</span>
-                            </div>
-                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
-                            <p class="skill-desc">SSR, SSG, App Router, Hooks, Context API, Redux Toolkit</p>
-                        </div>
-                    </div>
-
-                    <div class="skill-card glass-card" data-category="frontend">
-                        <div class="skill-icon-box color-js"><i class="fa-brands fa-js"></i></div>
-                        <div class="skill-info">
-                            <div class="skill-head">
-                                <h4 class="skill-name">TypeScript / ES6+</h4>
-                                <span class="skill-percent">92%</span>
-                            </div>
-                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 92%;"></div></div>
-                            <p class="skill-desc">Strict Typing, Generics, Async Patterns, Modern Web APIs</p>
-                        </div>
-                    </div>
-
-                    <div class="skill-card glass-card" data-category="frontend">
-                        <div class="skill-icon-box color-css"><i class="fa-brands fa-css3-alt"></i></div>
-                        <div class="skill-info">
-                            <div class="skill-head">
-                                <h4 class="skill-name">CSS3 / Tailwind / Sass</h4>
-                                <span class="skill-percent">90%</span>
-                            </div>
-                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
-                            <p class="skill-desc">Glassmorphism, Animations, Flex/Grid, Custom Utilities</p>
-                        </div>
-                    </div>
-
-                    <!-- Backend -->
-                    <div class="skill-card glass-card" data-category="backend">
-                        <div class="skill-icon-box color-python"><i class="fa-brands fa-python"></i></div>
-                        <div class="skill-info">
-                            <div class="skill-head">
-                                <h4 class="skill-name">Python / FastAPI</h4>
-                                <span class="skill-percent">92%</span>
-                            </div>
-                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 92%;"></div></div>
-                            <p class="skill-desc">Asynchronous REST APIs, Pydantic Validation, OpenAPI Specs, WebSockets</p>
-                        </div>
-                    </div>
-
-                    <div class="skill-card glass-card" data-category="backend">
-                        <div class="skill-icon-box color-python" style="color: #10b981;"><i class="fa-brands fa-python"></i></div>
-                        <div class="skill-info">
-                            <div class="skill-head">
-                                <h4 class="skill-name">Python / Django &amp; DRF</h4>
-                                <span class="skill-percent">90%</span>
-                            </div>
-                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
-                            <p class="skill-desc">Django ORM, REST Framework, Admin Interface, Auth Security</p>
-                        </div>
-                    </div>
-
-                    <div class="skill-card glass-card" data-category="backend">
-                        <div class="skill-icon-box color-db"><i class="fa-solid fa-database"></i></div>
-                        <div class="skill-info">
-                            <div class="skill-head">
-                                <h4 class="skill-name">PostgreSQL / MongoDB / Redis</h4>
-                                <span class="skill-percent">86%</span>
-                            </div>
-                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 86%;"></div></div>
-                            <p class="skill-desc">Indexing, Query Optimization, Caching, Document &amp; Relational</p>
-                        </div>
-                    </div>
-
-                    <!-- Tools & Workflow -->
-                    <div class="skill-card glass-card" data-category="tools">
-                        <div class="skill-icon-box color-git"><i class="fa-brands fa-git-alt"></i></div>
-                        <div class="skill-info">
-                            <div class="skill-head">
-                                <h4 class="skill-name">Git &amp; GitHub Workflows</h4>
-                                <span class="skill-percent">94%</span>
-                            </div>
-                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 94%;"></div></div>
-                            <p class="skill-desc">Branching Strategies, PR Code Reviews, CI/CD Actions</p>
-                        </div>
-                    </div>
-
-                    <div class="skill-card glass-card" data-category="tools">
-                        <div class="skill-icon-box color-react"><i class="fa-solid fa-vial"></i></div>
-                        <div class="skill-info">
-                            <div class="skill-head">
-                                <h4 class="skill-name">Jest &amp; Cypress Testing</h4>
-                                <span class="skill-percent">88%</span>
-                            </div>
-                            <div class="skill-progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
-                            <p class="skill-desc">Unit Testing, Integration Tests, End-to-End Test Automation</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Showcase Section -->
-        <section class="section projects-section" id="projects">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="section-subtitle">Portfolio Showcase</span>
-                    <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
-                    <div class="section-line"></div>
-                </div>
-
-                <!-- Project Filter Buttons -->
-                <div class="category-filter-bar project-filter-bar">
-                    <button class="project-filter-btn active" data-project-filter="all">All Work</button>
-                    <button class="project-filter-btn" data-project-filter="mobile">Mobile Apps (Flutter)</button>
-                    <button class="project-filter-btn" data-project-filter="fullstack">Full-Stack Web</button>
-                    <button class="project-filter-btn" data-project-filter="backend">Backend APIs</button>
-                </div>
-
-                <div class="projects-grid" id="projects-container">
-                    <!-- Project 1 -->
-                    <div class="project-card glass-card" data-category="fullstack" data-id="p1">
-                        <div class="project-img-wrapper">
-                            <img src="assets/images/project_ai.jpg" alt="Nexus Web Analytics Platform" class="project-img">
-                            <div class="project-badge">Featured Web App</div>
-                            <div class="project-overlay">
-                                <div class="project-overlay-links">
-                                    <button class="btn-circle view-details-btn" data-id="p1" aria-label="Quick View"><i class="fa-solid fa-eye"></i></button>
-                                    <a href="https://github.com/rophylbycurtis" target="_blank" rel="noopener" class="btn-circle" aria-label="GitHub Repo"><i class="fa-brands fa-github"></i></a>
-                                    <a href="#" target="_blank" rel="noopener" class="btn-circle" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Nexus Web Analytics Platform</h3>
-                            <p class="project-desc">
-                                Real-time web data dashboard featuring customizable chart widgets, live visitor metrics, and detailed traffic analytics reports.
-                            </p>
-                            <div class="project-tags">
-                                <span>Next.js</span>
-                                <span>React</span>
-                                <span>Python</span>
-                                <span>FastAPI</span>
-                                <span>Tailwind</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="project-card glass-card" data-category="mobile" data-id="p2">
-                        <div class="project-img-wrapper">
-                            <img src="assets/images/project_ecommerce.jpg" alt="OmniPay Fintech Mobile App (iOS & Android)" class="project-img">
-                            <div class="project-badge">iOS &amp; Android App</div>
-                            <div class="project-overlay">
-                                <div class="project-overlay-links">
-                                    <button class="btn-circle view-details-btn" data-id="p2" aria-label="Quick View"><i class="fa-solid fa-eye"></i></button>
-                                    <a href="https://github.com/rophylbycurtis" target="_blank" rel="noopener" class="btn-circle" aria-label="GitHub Repo"><i class="fa-brands fa-github"></i></a>
-                                    <a href="#" target="_blank" rel="noopener" class="btn-circle" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">OmniPay Flutter Fintech App</h3>
-                            <p class="project-desc">
-                                Cross-platform iOS &amp; Android payment mobile app built with Flutter, featuring biometric auth, multi-currency wallets, and instant transfers.
-                            </p>
-                            <div class="project-tags">
-                                <span>Flutter</span>
-                                <span>Dart</span>
-                                <span>Python</span>
-                                <span>FastAPI</span>
-                                <span>PostgreSQL</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="project-card glass-card" data-category="backend" data-id="p3">
-                        <div class="project-img-wrapper">
-                            <img src="assets/images/project_devops.jpg" alt="Pulse Web App Monitoring Console" class="project-img">
-                            <div class="project-badge">Backend System</div>
-                            <div class="project-overlay">
-                                <div class="project-overlay-links">
-                                    <button class="btn-circle view-details-btn" data-id="p3" aria-label="Quick View"><i class="fa-solid fa-eye"></i></button>
-                                    <a href="https://github.com/rophylbycurtis" target="_blank" rel="noopener" class="btn-circle" aria-label="GitHub Repo"><i class="fa-brands fa-github"></i></a>
-                                    <a href="#" target="_blank" rel="noopener" class="btn-circle" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Pulse Web App Control Center</h3>
-                            <p class="project-desc">
-                                Unified Web monitoring portal providing real-time telemetry, server endpoint health metrics, and automated alert logs.
-                            </p>
-                            <div class="project-tags">
-                                <span>TypeScript</span>
-                                <span>Python</span>
-                                <span>Django</span>
-                                <span>Redis</span>
-                                <span>PostgreSQL</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 4 -->
-                    <div class="project-card glass-card" data-category="mobile" data-id="p4">
-                        <div class="project-img-wrapper">
-                            <div class="project-svg-preview bg-gradient-1">
-                                <i class="fa-solid fa-mobile-screen-button icon-hero"></i>
-                            </div>
-                            <div class="project-badge">Flutter Mobile App</div>
-                            <div class="project-overlay">
-                                <div class="project-overlay-links">
-                                    <button class="btn-circle view-details-btn" data-id="p4" aria-label="Quick View"><i class="fa-solid fa-eye"></i></button>
-                                    <a href="https://github.com/rophylbycurtis" target="_blank" rel="noopener" class="btn-circle" aria-label="GitHub Repo"><i class="fa-brands fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">FitPulse Mobile Fitness Tracker</h3>
-                            <p class="project-desc">
-                                High-performance iOS &amp; Android fitness app built with Flutter, providing real-time workout tracking, offline sync, and social goal sharing.
-                            </p>
-                            <div class="project-tags">
-                                <span>Flutter</span>
-                                <span>Dart</span>
-                                <span>Python</span>
-                                <span>FastAPI</span>
-                                <span>Firebase</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 5 -->
-                    <div class="project-card glass-card" data-category="fullstack" data-id="p5">
-                        <div class="project-img-wrapper">
-                            <div class="project-svg-preview bg-gradient-2">
-                                <i class="fa-solid fa-code icon-hero"></i>
-                            </div>
-                            <div class="project-badge">Developer Tools</div>
-                            <div class="project-overlay">
-                                <div class="project-overlay-links">
-                                    <button class="btn-circle view-details-btn" data-id="p5" aria-label="Quick View"><i class="fa-solid fa-eye"></i></button>
-                                    <a href="https://github.com/rophylbycurtis" target="_blank" rel="noopener" class="btn-circle" aria-label="GitHub Repo"><i class="fa-brands fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">HyperIDE Web Code Playground</h3>
-                            <p class="project-desc">
-                                Browser-based multi-language code runner leveraging WebAssembly for instant client-side execution and live collaboration.
-                            </p>
-                            <div class="project-tags">
-                                <span>TypeScript</span>
-                                <span>WebAssembly</span>
-                                <span>Monaco Editor</span>
-                                <span>Socket.io</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 6 -->
-                    <div class="project-card glass-card" data-category="fullstack" data-id="p6">
-                        <div class="project-img-wrapper">
-                            <div class="project-svg-preview bg-gradient-3">
-                                <i class="fa-solid fa-bolt icon-hero"></i>
-                            </div>
-                            <div class="project-badge">Full-Stack Starter</div>
-                            <div class="project-overlay">
-                                <div class="project-overlay-links">
-                                    <button class="btn-circle view-details-btn" data-id="p6" aria-label="Quick View"><i class="fa-solid fa-eye"></i></button>
-                                    <a href="https://github.com/rophylbycurtis" target="_blank" rel="noopener" class="btn-circle" aria-label="GitHub Repo"><i class="fa-brands fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Enterprise SaaS Web Boilerplate</h3>
-                            <p class="project-desc">
-                                Production-ready full-stack web template featuring user authentication, subscription billing, multi-tenant databases, and responsive layouts.
-                            </p>
-                            <div class="project-tags">
-                                <span>Next.js 14</span>
-                                <span>React</span>
-                                <span>Prisma</span>
-                                <span>Supabase</span>
-                                <span>Stripe</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience & Education Section -->
-        <section class="section experience-section" id="experience">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="section-subtitle">Career Journey</span>
-                    <h2 class="section-title">Work &amp; <span class="text-gradient">Experience</span></h2>
-                    <div class="section-line"></div>
-                </div>
-
-                <div class="timeline-wrapper">
-                    <div class="timeline-line"></div>
-
-                    <!-- Item 1 -->
-                    <div class="timeline-item glass-card">
-                        <div class="timeline-dot"><i class="fa-solid fa-briefcase"></i></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <div>
-                                    <h3 class="timeline-title">Full Stack Developer</h3>
-                                    <h4 class="timeline-company">Apex Web Innovations Inc.</h4>
-                                </div>
-                                <span class="timeline-date">2023 - Present</span>
-                            </div>
-                            <p class="timeline-text">
-                                Leading a team of 6 web developers building high-traffic full-stack web applications, RESTful APIs, and responsive frontends. Optimized page load speeds and backend database queries by 40%.
-                            </p>
-                            <div class="timeline-tags">
-                                <span>Next.js</span>
-                                <span>React</span>
-                                <span>Python</span>
-                                <span>FastAPI</span>
-                                <span>PostgreSQL</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div class="timeline-item glass-card">
-                        <div class="timeline-dot"><i class="fa-solid fa-laptop-code"></i></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <div>
-                                    <h3 class="timeline-title">Software Engineer</h3>
-                                    <h4 class="timeline-company">Vanguard Digital Systems</h4>
-                                </div>
-                                <span class="timeline-date">2021 - 2023</span>
-                            </div>
-                            <p class="timeline-text">
-                                Spearheaded full-stack development for high-traffic financial web services. Implemented real-time WebSockets communication, redis caching layer, and comprehensive automated test suites.
-                            </p>
-                            <div class="timeline-tags">
-                                <span>React</span>
-                                <span>Python</span>
-                                <span>Django</span>
-                                <span>PostgreSQL</span>
-                                <span>Redis</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 3 -->
-                    <div class="timeline-item glass-card">
-                        <div class="timeline-dot"><i class="fa-solid fa-code"></i></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <div>
-                                    <h3 class="timeline-title">Full Stack Web Developer</h3>
-                                    <h4 class="timeline-company">Nexus Web Labs</h4>
-                                </div>
-                                <span class="timeline-date">2019 - 2021</span>
-                            </div>
-                            <p class="timeline-text">
-                                Developed responsive web portals, internal developer dashboards, and RESTful web microservices. Collaborated closely with UI/UX designers to implement pixel-perfect user interfaces.
-                            </p>
-                            <div class="timeline-tags">
-                                <span>TypeScript</span>
-                                <span>Python</span>
-                                <span>FastAPI</span>
-                                <span>MongoDB</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 4 -->
-                    <div class="timeline-item glass-card">
-                        <div class="timeline-dot"><i class="fa-solid fa-graduation-cap"></i></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <div>
-                                    <h3 class="timeline-title">B.S. in Computer Science</h3>
-                                    <h4 class="timeline-company">University of California, Berkeley</h4>
-                                </div>
-                                <span class="timeline-date">2015 - 2019</span>
-                            </div>
-                            <p class="timeline-text">
-                                Graduated with Honors (Magna Cum Laude). Specialization in Software Engineering, Distributed Systems, and Machine Learning algorithms. President of the Open Source Developer Club.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Interactive Terminal CLI Section -->
-        <section class="section terminal-section" id="terminal">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="section-subtitle">Interactive Playground</span>
-                    <h2 class="section-title">Developer <span class="text-gradient">Terminal</span></h2>
-                    <div class="section-line"></div>
-                    <p class="section-desc">Type commands in the console below to explore interactive features and secret commands!</p>
-                </div>
-
-                <div class="terminal-window glass-card">
-                    <div class="terminal-header">
-                        <div class="editor-dots">
-                            <span class="dot dot-red"></span>
-                            <span class="dot dot-yellow"></span>
-                            <span class="dot dot-green"></span>
-                        </div>
-                        <div class="terminal-title">
-                            <i class="fa-solid fa-terminal"></i>
-                            <span>henry@dev-machine:~ (zsh)</span>
-                        </div>
-                        <div class="terminal-actions">
-                            <button id="terminal-clear-btn" class="terminal-btn" title="Clear Screen"><i class="fa-solid fa-eraser"></i></button>
-                        </div>
-                    </div>
-                    
-                    <div class="terminal-body" id="terminal-body">
-                        <div class="terminal-line output">Welcome to Henry Curtis's Interactive Portfolio CLI v2.4.0</div>
-                        <div class="terminal-line output">Type <span class="cmd-highlight">'help'</span> to view available commands. Try <span class="cmd-highlight">'skills'</span>, <span class="cmd-highlight">'projects'</span>, or <span class="cmd-highlight">'sudo hire'</span>!</div>
-                        <div class="terminal-line output">&nbsp;</div>
-
-                        <!-- Command Output Container -->
-                        <div id="terminal-output"></div>
-
-                        <!-- Active Input Row -->
-                        <div class="terminal-input-line">
-                            <span class="prompt-user">visitor@henrycurtis</span>:<span class="prompt-path">~</span>$
-                            <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" placeholder="Type a command...">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="section contact-section" id="contact">
-            <div class="container">
-                <div class="section-header center">
-                    <span class="section-subtitle">Let's Connect</span>
-                    <h2 class="section-title">Get In <span class="text-gradient">Touch</span></h2>
-                    <div class="section-line"></div>
-                </div>
-
-                <div class="contact-grid">
-                    <!-- Left: Contact Cards -->
-                    <div class="contact-cards-column">
-                        <div class="contact-card glass-card">
-                            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-                            <div class="contact-card-info">
-                                <span class="contact-label">Email Me</span>
-                                <h4 class="contact-val">curtishenry030@gmail.com</h4>
-                            </div>
-                            <button class="copy-email-btn" id="copy-email-btn" title="Copy Email">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                        </div>
-
-                        <div class="contact-card glass-card">
-                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-                            <div class="contact-card-info">
-                                <span class="contact-label">Current Location</span>
-                                <h4 class="contact-val">Unavailable</h4>
-                            </div>
-                        </div>
-
-                        <div class="contact-card glass-card">
-                            <div class="contact-icon"><i class="fa-solid fa-calendar-check"></i></div>
-                            <div class="contact-card-info">
-                                <span class="contact-label">Working Hours</span>
-                                <h4 class="contact-val">Mon - Fri, 09:00 - 18:00 PST</h4>
-                            </div>
-                        </div>
-
-                        <div class="social-connect-card glass-card">
-                            <h4 class="social-title">Follow &amp; Connect</h4>
-                            <div class="social-links-grid">
-                                <a href="https://github.com/rophylbycurtis" target="_blank" rel="noopener" class="social-box"><i class="fa-brands fa-github"></i> GitHub</a>
-                                <a href="https://www.linkedin.com/in/henry-curtis-a745792b4" target="_blank" rel="noopener" class="social-box"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                                <a href="https://x.com/realcurtis_" target="_blank" rel="noopener" class="social-box"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a>
-                                <a href="https://www.instagram.com/itscurtishenry" target="_blank" rel="noopener" class="social-box"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: Contact Form -->
-                    <div class="contact-form-column">
-                        <form class="contact-form glass-card" id="contact-form" action="https://formspree.io/f/xjybqglj" method="POST">
-                            <h3 class="form-title">Send Me A Message</h3>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="form-name">Your Name <span class="required">*</span></label>
-                                    <input type="text" id="form-name" name="name" required placeholder="John Doe">
-                                </div>
-                                <div class="form-group">
-                                    <label for="form-email">Your Email <span class="required">*</span></label>
-                                    <input type="email" id="form-email" name="email" required placeholder="john@example.com">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="form-subject">Subject</label>
-                                <input type="text" id="form-subject" name="subject" placeholder="Project Inquiry / Job Opportunity">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="form-message">Message <span class="required">*</span></label>
-                                <textarea id="form-message" name="message" rows="5" required placeholder="Hello Henry, I'd like to discuss a project..."></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary btn-glow btn-block" id="form-submit-btn">
-                                <span>Send Message</span>
-                                <i class="fa-solid fa-paper-plane"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <section class="terminal-section section-shell" aria-labelledby="terminal-heading"><div class="terminal-copy reveal"><p class="eyebrow">INTERACTIVE CLI / 05</p><h2 id="terminal-heading">Ask the portfolio <em>directly.</em></h2><p>A small command line for the curious. Try <code>help</code>, <code>projects</code>, <code>stack</code>, or <code>contact</code>.</p></div><div class="terminal reveal"><div class="terminal-titlebar"><div><i></i><i></i><i></i></div><span>henry@portfolio: ~</span><button id="terminal-clear" type="button">clear</button></div><div class="terminal-output" id="terminal-output"><p><span class="terminal-dim">Portfolio CLI v1.0</span></p><p>Type <b>help</b> to see available commands.</p><div class="terminal-line terminal-active"><span>visitor@portfolio:~$</span><input id="terminal-input" autocomplete="off" spellcheck="false" aria-label="Terminal command" autofocus /></div></div></div></section>
+      <section class="contact" id="contact"><div class="section-shell contact-inner reveal"><p class="eyebrow">OPEN TO CONVERSATION / 06</p><h2>Have something<br />worth <em>building?</em></h2><a class="contact-email" href="mailto:curtishenry030@gmail.com">curtishenry030@gmail.com <span>↗</span></a><form class="contact-form" id="contact-form" action="https://formspree.io/f/xjybqglj" method="POST"><div class="form-row"><label>Name<input name="name" required placeholder="Your name" /></label><label>Email<input name="email" type="email" required placeholder="you@example.com" /></label></div><label>What’s on your mind?<textarea name="message" required rows="4" placeholder="A project, idea, or opportunity…"></textarea></label><button class="form-submit" id="form-submit" type="submit">Send message <span>↗</span></button><p class="form-status" id="form-status" aria-live="polite"></p></form><div class="contact-bottom"><p>Building practical software, end to end</p><div><a href="https://github.com/rophylbycurtis" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/henry-curtis-a745792b4" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://x.com/realcurtis_" target="_blank" rel="noreferrer">X</a></div></div></div></section>
     </main>
+    <footer><span>© <span id="year"></span> HENRY CURTIS</span><span>BUILT WITH INTENTION</span></footer>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-left">
-                <a href="#hero" class="brand-logo">
-                    <span class="logo-bracket">&lt;</span><span class="logo-name">HenryCurtis</span><span class="logo-slash">/</span><span class="logo-bracket">&gt;</span>
-                </a>
-                <p class="footer-copy">&copy; <span id="current-year">2026</span> Henry Curtis. Crafted with passion &amp; clean code.</p>
-            </div>
-
-            <div class="footer-right">
-                <div class="uptime-badge">
-                    <span class="status-dot"></span>
-                    <span>Systems Operational</span>
-                </div>
-                <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-                    <i class="fa-solid fa-arrow-up"></i>
-                </button>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Project Detail Modal -->
-    <div class="modal-overlay" id="project-modal">
-        <div class="modal-card glass-card">
-            <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
-            <div class="modal-body" id="modal-body">
-                <!-- Dynamically populated via JS -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Toast Notification -->
-    <div class="toast-notification" id="toast">
-        <i class="fa-solid fa-circle-check toast-icon"></i>
-        <span class="toast-message" id="toast-message">Message sent successfully!</span>
-    </div>
-
-    <!-- JavaScript File -->
+    <dialog class="project-dialog" id="project-dialog"><button class="dialog-close" aria-label="Close">×</button><div class="dialog-top"><span id="dialog-number">01</span><span id="dialog-type">PRODUCT SYSTEM</span></div><h2 id="dialog-title"></h2><p id="dialog-copy"></p><div class="dialog-grid"><div><small>DESIGN QUESTION</small><p id="dialog-question"></p></div><div><small>ENGINEERING FOCUS</small><ul id="dialog-focus"></ul></div></div><p class="dialog-note" id="dialog-note"></p></dialog>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
