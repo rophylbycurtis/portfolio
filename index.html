@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles.css?v=2" />
     <link rel="stylesheet" href="extra.css?v=2" />
     <link rel="stylesheet" href="terminal.css?v=2" />
+    <link rel="stylesheet" href="mobile-menu.css?v=1" />
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -21,8 +22,14 @@
         <a href="#work">Work</a><a href="#systems">Systems</a><a href="#about">About</a>
       </nav>
       <a class="nav-contact" href="#contact">Let’s talk <span>↗</span></a>
-      <button class="menu-button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+      <button class="menu-button" id="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
     </header>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
+      <a href="#work">Work <span>01</span></a>
+      <a href="#systems">Systems <span>02</span></a>
+      <a href="#about">About <span>03</span></a>
+      <a href="#contact">Contact <span>04</span></a>
+    </nav>
 
     <main id="top">
       <section class="hero section-shell">
@@ -103,5 +110,6 @@
     <dialog class="project-dialog" id="project-dialog"><button class="dialog-close" aria-label="Close">×</button><div class="dialog-top"><span id="dialog-number">01</span><span id="dialog-type">PRODUCT SYSTEM</span></div><h2 id="dialog-title"></h2><p id="dialog-copy"></p><div class="dialog-grid"><div><small>DESIGN QUESTION</small><p id="dialog-question"></p></div><div><small>ENGINEERING FOCUS</small><ul id="dialog-focus"></ul></div></div><p class="dialog-note" id="dialog-note"></p></dialog>
     <script src="script.js?v=2"></script>
     <script src="load-behavior.js?v=2"></script>
+    <script src="mobile-menu.js?v=1"></script>
   </body>
 </html>
