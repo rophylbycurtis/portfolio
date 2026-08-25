@@ -382,8 +382,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="cmd-output-text">  <span class="cmd-highlight">sudo hire</span> - Launch priority recruitment request</div>
         `,
         about: `
-            <div class="cmd-output-text"><span class="cmd-success">Henry Curtis</span> | Senior Full Stack & Mobile Developer</div>
-            <div class="cmd-output-text">Location: Unavailable. 6+ years of engineering experience creating Flutter iOS & Android apps, Web Apps, and Python APIs (FastAPI & Django).</div>
+            <div class="cmd-output-text"><span class="cmd-success">Henry Curtis</span> | Full Stack & Mobile Developer</div>
+            <div class="cmd-output-text">Location: Unavailable. 4+ years of engineering experience creating Flutter iOS & Android apps, Web Apps, and Python APIs (FastAPI & Django).</div>
         `,
         skills: `
             <div class="cmd-output-text">Core Technical Stack:</div>
